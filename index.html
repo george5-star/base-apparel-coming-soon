@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to stylesheet-->
+    <link rel="stylesheet" href="src/css/styles.css" />
+
+    <!-- Link to javascript-->
+    <script src="src/js/app.js" defer></script>
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="hero-message">
+        <div class="hero-message__container">
+          <div class="hero-message__logo">
+            <img src="src/images/logo.svg" alt="site logo" class="site-logo" />
+          </div>
+          <div class="hero-message__content">
+            <h1 class="hero-message__main-title">
+              <span class="accent">We're</span>coming soon
+            </h1>
+            <p class="hero-message__description">
+              Hello fellow shoppers. We are currently building our new store.
+              Add your email below to stay up-to-date announcements and launch
+              deals.
+            </p>
+          </div>
+          <form class="form">
+            <div class="form__wrapper">
+              <input
+                type="text"
+                class="form__input"
+                placeholder="Email Address"
+              />
+              <img
+                src="src/images/icon-error.svg"
+                alt="error icon"
+                class="form__error-icon"
+              />
+            </div>
+
+            <button class="form__button">
+              <img src="src/images/icon-arrow.svg" alt="arrow icon" />
+            </button>
+            <p class="form__error-message">Please provide a valid email</p>
+          </form>
+        </div>
+      </section>
+      <section class="hero-img"></section>
+    </main>
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">George Asiedu</a>.
+      </p>
+    </footer>
+  </body>
+</html>

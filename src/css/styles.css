@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --clr-1: hsl(0, 36%, 70%);
+  --clr-2: hsl(0, 93%, 68%);
+
+  --clr-3: hsl(0, 6%, 24%);
+
+  /* --gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)); */
+
+  --gradient-1: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 84%));
+  --gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+  /* typography */
+  --fs-300: 16px;
+
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-bold: 600;
+
+  --ff-primary: "Josefin Sans", sans-serif;
+
+  /* sizes */
+  --size-5: 0.5rem;
+  --size-7: 0.7rem;
+  --size-8: 0.8rem;
+  --size-10: 1rem;
+  --size-15: 1.5rem;
+  --size-20: 2rem;
+  --size-25: 2.5rem;
+  --size-30: 3rem;
+  --size-40: 4rem;
+  --size-50: 5rem;
+  --size-60: 6rem;
+  --size-70: 7rem;
+  --size-80: 8rem;
+  --size-90: 9rem;
+  --size-100: 10rem;
+}
+
+body {
+  height: 100vh;
+  font-family: var(--ff-primary);
+  line-height: 1.5;
+}
+
+.attribution {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.hero-message {
+  background: url(../images/bg-pattern-desktop.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}
+
+.hero-message__main-title {
+  font-size: clamp(2rem, 3.5vw + 1rem, 5rem);
+}
+
+.hero-message__description {
+  margin-block: var(--size-10) var(--size-10);
+  color: var(--clr-1);
+  max-width: 80%;
+}
+
+.accent {
+  display: block;
+  font-weight: var(--fw-light);
+  color: var(--clr-1);
+}
+
+@media (max-width: 40em) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .hero-message {
+    padding-inline: var(--size-10);
+    text-align: center;
+    background-position: bottom;
+  }
+  .hero-message__main-title {
+    margin: 0 auto var(--size-15);
+    padding-block-start: var(--size-20);
+  }
+
+  .hero-message__description {
+    margin-inline: auto;
+    max-width: 95%;
+  }
+
+  .hero-img {
+    margin-inline: auto;
+    background: url(../images/hero-mobile.jpg) no-repeat;
+    background-size: cover;
+    background-position: top;
+    object-fit: cover;
+    width: 100%;
+    min-height: 12rem;
+    order: 1;
+    margin-block: var(--size-40) 0;
+  }
+
+  .hero-message__logo {
+    position: absolute;
+    inset-block-start: 0;
+    margin-block: var(--size-10);
+    width: 6rem;
+  }
+
+  .site-logo {
+    max-width: 100%;
+  }
+
+  .hero-message {
+    order: 2;
+  }
+
+  .form {
+    margin-inline: auto;
+  }
+
+  .form__error-message {
+    text-indent: none;
+    text-align-last: left;
+  }
+}
+
+@media (min-width: 40em) {
+  .hero-message {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-message__container {
+    width: 90%;
+    height: 90%;
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+
+  .hero-message__content {
+    margin-block: var(--size-50) 0;
+  }
+
+  .hero-img {
+    background: url(../images/hero-desktop.jpg) no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    height: 100%;
+    width: 45%;
+    margin-inline-start: auto;
+  }
+}
+
+.hero-message__main-title {
+  text-transform: uppercase;
+  width: 70%;
+  letter-spacing: var(--size-7);
+  color: var(--clr-3);
+  line-height: 1.1;
+}
+
+.form {
+  width: 90%;
+  position: relative;
+}
+
+.form__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form__input {
+  width: 100%;
+  padding: var(--size-10);
+  border-radius: var(--size-20);
+  border: 1px solid var(--clr-1);
+}
+
+.form__input:is(:hover, :focus) {
+  outline: 1px solid var(--clr-1);
+  border: 1px solid var(--clr-1);
+}
+
+.form__error-icon {
+  display: none;
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.form__button {
+  padding: clamp(0.9rem, 1.2vw, 1.5rem) clamp(1rem, 3vw + 1rem, 3rem);
+  border-radius: 100vw;
+  border: none;
+  background: var(--gradient-2);
+  position: absolute;
+  inset-inline-end: 0%;
+  inset-block-start: -0.15rem;
+}
+
+.form__button:is(:hover, :focus) {
+  cursor: pointer;
+  background: var(--gradient-1);
+  box-shadow: 0 var(--size-5) var(--size-5) rgb(0 0 0 / 15%);
+}
+
+.form__error-message {
+  display: none;
+  color: var(--clr-2);
+  font-size: var(--size-8);
+  text-indent: var(--size-20);
+  margin-block-start: var(--size-5);
+}
+
+.toggleInputError {
+  display: block;
+  outline: 1px solid var(--clr-2);
+}
+.toggleError {
+  display: block;
+}
